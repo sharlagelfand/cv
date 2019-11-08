@@ -1,9 +1,11 @@
-section;in_resume;title;loc;institution;start;end;description_1;description_2;description_3
-education;TRUE;Msc, Statistics;Simon Fraser University;Vancouver, BC;2013;2015;Incorporated d3.js to the company's main software platform.;2020;Working on Bayesian network models & interactive visualization platforms
-education;TRUE;Bsc, Statistics (minor in Economics);University of Calgary;Calgary, AB;2009;2013;Incorporated d3.js to the company's main software platform.;2015;Thesis: An agent based model of Diel Vertical Migration patterns of Mysis diluviana
-experience;TRUE;Freelance R and Shiny Developer;;Toronto, ON;2018;NA;Incorporated d3.js to the company's main software platform.;Incorporated d3.js to the company's main software platform.;NA
-experience;TRUE;Statistician;College of Nurses of Ontario;Toronto, ON;Jul. 2018;Sep. 2019;Incorporated d3.js to the company's main software platform.;Built internal tool to help analyze and visualize user interaction with back-end products.;NA
-experience;TRUE;Data Analyst;Wattpad;Toronto, ON;Apr. 2017;Jun. 2018;Incorporated d3.js to the company's main software platform.;Worked with the product analytics team to help parse and visualize large stores of data to drive business decisions.;NA
-experience;TRUE;Product Analyst;Unbounce;Vancouver, BC;Nov. 2015;Mar. 2017;Incorporated d3.js to the company's main software platform.;Envisioned; prototyped and implemented visualization framework in the course of one month.
-talks;TRUE;Don't repeat yourself, talk to yourself! Repeated reporting in the R universe;RStudio Conference;San Francisco, CA;Jan. 2020;;;;
-talks;TRUE;Cleaning Federal Election Data;University of Toronto iSchool Data Cleaning Brown Bag;Toronto, ON;Nov. 2019;;;;
+section;in_resume;title;loc;institution;start;end;simplify_date_to_year;description_1;description_2;description_3
+education;TRUE;Msc, Statistics;Simon Fraser University;Vancouver, BC;2013-01-01;2015-01-01;TRUE;Incorporated d3.js to the company's main software platform.;2020;Working on Bayesian network models & interactive visualization platforms
+education;TRUE;Bsc, Statistics (minor in Economics);University of Calgary;Calgary, AB;2009-01-01;2013-01-01;TRUE;Incorporated d3.js to the company's main software platform.;2015;Thesis: An agent based model of Diel Vertical Migration patterns of Mysis diluviana
+experience;TRUE;Freelance R and Shiny Developer;;Toronto, ON;2018-01-01;NA;TRUE;Incorporated d3.js to the company's main software platform.;Incorporated d3.js to the company's main software platform.;NA
+experience;TRUE;Statistician;College of Nurses of Ontario;Toronto, ON;2018-07-01;2019-09-01;FALSE;Incorporated d3.js to the company's main software platform.;Built internal tool to help analyze and visualize user interaction with back-end products.;NA
+experience;TRUE;Data Analyst;Wattpad;Toronto, ON;2017-04-01;2018-06-01;FALSE;Incorporated d3.js to the company's main software platform.;Worked with the product analytics team to help parse and visualize large stores of data to drive business decisions.;NA
+experience;TRUE;Product Analyst;Unbounce;Vancouver, BC;2015-11-01;2017-03-01;FALSE;Incorporated d3.js to the company's main software platform.;Envisioned; prototyped and implemented visualization framework in the course of one month.
+talks;TRUE;Don't repeat yourself, talk to yourself! Repeated reporting in the R universe;RStudio Conference;San Francisco, CA;2020-01-01;2020-01-01;FALSE;;;
+talks;TRUE;Cleaning Federal Election Data;University of Toronto iSchool Data Cleaning Brown Bag;Toronto, ON;2019-10-01;2019-10-01;FALSE;;;
+talks;TRUE;Demo'ing the opendatatoronto R package;Greater Toronto Area R Users Group;Toronto, ON;2019-09-01;2019-09-01;FALSE;;;
+talks;TRUE;Opinionated Strategies for Uncharted Territories: Strategies for working with new data;Greater Toronto Area R Users Group and R-Ladies Toronto;Toronto, ON;2019-03-05;2019-03-05;FALSE;;;
