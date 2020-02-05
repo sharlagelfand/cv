@@ -6,7 +6,7 @@ output:
   pagedown::html_resume:
     css: ['css/styles.css', 'resume']
     # set it to true for a self-contained HTML page but it'll take longer to render
-    self_contained: true
+    self_contained: false
 ---
 
 ```{r, include=FALSE}
@@ -22,11 +22,8 @@ library(tidyr)
 library(stringr)
 library(readr)
 
-# Set this to true to have links turned into footnotes at the end of the document
-PDF_EXPORT <- FALSE
-
-# Holds all the links that were inserted for placement at the end
-links <- c()
+# Set this to true to have links unlinked
+PDF_EXPORT <- TRUE
 
 source("parsing_functions.R")
 
@@ -34,16 +31,20 @@ source("parsing_functions.R")
 position_data <- read_delim("positions.csv", ";", escape_double = FALSE, trim_ws = TRUE)
 ```
 
-
 ```{r}
-# When in export mode the little dots are unaligned, so fix that.
+# When in export mode the little dots are unaligned, so fix that. Make links black too.
 if (PDF_EXPORT) {
   cat("
   <style>
   :root{
     --decorator-outer-offset-left: -6.5px;
   }
-  </style>")
+  
+  a {
+  color: black;
+}
+  </style>
+  ")
 }
 ```
 
@@ -58,7 +59,7 @@ Contact {#contact}
 - <i class="fa fa-envelope"></i> sharla.gelfand@gmail.com
 - <i class="fa fa-twitter"></i> sharlagelfand
 - <i class="fa fa-github"></i> [github.com/sharlagelfand](https://github.com/sharlagelfand)
-- <i class="fa fa-link"></i> [sharla.party](http://sharla.party/)
+- <i class="fa fa-link"></i> [sharla.party](https://sharla.party)
 
 Language Skills {#skills}
 --------------------------------------------------------------------------------
@@ -103,45 +104,9 @@ Talks {data-icon=book}
 print_section(position_data, "talks")
 ```
 
-```{r}
-if (PDF_EXPORT) {
-  cat("
-  
-Links {data-icon=link}
---------------------------------------------------------------------------------
-
-<br>
-
-
-")
-
-  walk2(links, 1:length(links), function(link, index) {
-    print(glue("{index}. {link}"))
-  })
-}
-```
-
 Community {data-icon=hands-helping}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, "community")
-```
-
-```{r}
-if (PDF_EXPORT) {
-  cat("
-  
-Links {data-icon=link}
---------------------------------------------------------------------------------
-
-<br>
-
-
-")
-
-  walk2(links, 1:length(links), function(link, index) {
-    print(glue("{index}. {link}"))
-  })
-}
 ```

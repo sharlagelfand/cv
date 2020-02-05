@@ -10,12 +10,13 @@ find_link <- regex("
   comments = TRUE
 )
 
-# Function that removes links from text and replaces them with superscripts that are
-# referenced in an end-of-document list.
+# Function that makes links italic
 sanitize_links <- function(text) {
   if (PDF_EXPORT) {
-    str_extract_all(text, find_link) %>%
-      pluck(1) %>%
+    links <- str_extract_all(text, find_link) %>%
+      pluck(1)
+
+    links %>%
       walk(function(link_from_text) {
         title <- link_from_text %>%
           str_extract("\\[.+\\]") %>%
@@ -24,11 +25,8 @@ sanitize_links <- function(text) {
           str_extract("\\(.+\\)") %>%
           str_remove_all("\\(|\\)")
 
-        # add link to links array
-        links <<- c(links, link)
-
         # Build replacement text
-        new_text <- glue("{title}<sup>{length(links)}</sup>")
+        new_text <- glue("[<i>{title}</i>]({link})")
 
         # Replace text
         text <<- text %>% str_replace(fixed(link_from_text), new_text)
