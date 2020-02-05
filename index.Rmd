@@ -7,6 +7,8 @@ output:
     css: ['css/styles.css', 'resume']
     # set it to true for a self-contained HTML page but it'll take longer to render
     self_contained: true
+params:
+  PDF_EXPORT: FALSE
 ---
 
 ```{r, include=FALSE}
@@ -23,7 +25,7 @@ library(stringr)
 library(readr)
 
 # Set this to true to have links unlinked
-PDF_EXPORT <- FALSE
+PDF_EXPORT <- params$PDF_EXPORT
 
 source("parsing_functions.R")
 
