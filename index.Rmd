@@ -51,15 +51,6 @@ if (PDF_EXPORT) {
 Aside
 ================================================================================
 
-```{r}
-# When in export mode the little dots are unaligned, so fix that.
-if (PDF_EXPORT) {
-  cat("View this CV online with links at _sharla.party/cv_")
-} else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/sharlagelfand/cv/raw/master/sharla_gelfand_cv.pdf)")
-}
-```
-
 Contact {#contact}
 --------------------------------------------------------------------------------
 
@@ -69,6 +60,13 @@ Contact {#contact}
 - <i class="fa fa-github"></i> [github.com/sharlagelfand](https://github.com/sharlagelfand)
 - <i class="fa fa-link"></i> [sharla.party](http://sharla.party/)
 
+Language Skills {#skills}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-laptop"></i> R (tidyverse, base R, Shiny, package development)
+- <i class="fa fa-database"></i> SQL (MySQL, Postgres, BigQuery)
+- <i class="fa fa-github-alt"></i> git (and GitHub)
+
 Main
 ================================================================================
 
@@ -77,7 +75,7 @@ Sharla Gelfand {#title}
 
 
 ```{r}
-intro_text <- "I am a statistician and an R and Shiny developer. My work focuses on developing tools that enable easier access to data (such as my R package, [opendatatoronto](https://sharlagelfand.github.io/opendatatoronto)) and replacing manual, repetitive work with reproducible and future-proof processes. I write about R at [sharla.party](https://sharla.party) and contribute to open source."
+intro_text <- "I am a statistician and an R and Shiny developer. My work focuses on developing tools that enable easier access to data (such as my R package, [opendatatoronto](https://sharlagelfand.github.io/opendatatoronto)) and replacing manual, repetitive work with reproducible and future-proof processes. I write about R at [sharla.party](https://sharla.party) and love contributing to open source."
 
 cat(sanitize_links(intro_text))
 ```
@@ -88,6 +86,8 @@ Experience {data-icon=laptop}
 ```{r}
 print_section(position_data, "experience")
 ```
+
+<br>
 
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
@@ -101,6 +101,31 @@ Talks {data-icon=book}
 
 ```{r}
 print_section(position_data, "talks")
+```
+
+```{r}
+if (PDF_EXPORT) {
+  cat("
+  
+Links {data-icon=link}
+--------------------------------------------------------------------------------
+
+<br>
+
+
+")
+
+  walk2(links, 1:length(links), function(link, index) {
+    print(glue("{index}. {link}"))
+  })
+}
+```
+
+Community {data-icon=hands-helping}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, "community")
 ```
 
 ```{r}
