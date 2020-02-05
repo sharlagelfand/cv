@@ -6,7 +6,7 @@ output:
   pagedown::html_resume:
     css: ['css/styles.css', 'resume']
     # set it to true for a self-contained HTML page but it'll take longer to render
-    self_contained: false
+    self_contained: true
 ---
 
 ```{r, include=FALSE}
@@ -23,7 +23,7 @@ library(stringr)
 library(readr)
 
 # Set this to true to have links unlinked
-PDF_EXPORT <- TRUE
+PDF_EXPORT <- FALSE
 
 source("parsing_functions.R")
 
